@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dr Hami Lee</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="panel">
+
+    <div class="intro" id="intro">
+      <img src="whitelee.png" alt="Dr Hami Lee" />
+      <div class="intro-text">
+        <h1>Dr Hami Lee</h1>
+        <p>Enthusiastic researcher interested in developmental psychiatry and molecular genetics, particularly epigenetic factors</p>
+        <div class="contact-buttons">
+          <button onclick="location.href='mailto:hami.lee@uni.lu'"><img src="Email_icon.png" alt="e-mail" /></button>
+          <button onclick="location.href='https://www.researchgate.net/profile/Hami-Lee'"><img src="research-gate.png" alt="ResearchGate" /></button>
+          <button onclick="location.href='https://www.linkedin.com/in/hami-lee-659baa64'"><img src="linkedin-logo.png" alt="LinkedIn" /></button>
+          <button onclick="location.href='https://x.com/leehami7407'"><img src="x-logo.png" alt="Twitter" /></button>
+        </div>
+    <div class="tabs">
+      <button onclick="showSection('about')">About Me</button>
+      <button onclick="openCV()">My Career</button>
+
+    </div>
+      </div>
+    </div>
+
+
+
+    <div class="content hidden" id="about">
+	<p>Currently, I am a postdoctoral researcher at the Center for Substance Abuse, Lewis 	Katz Medical Center. 
+	My project is studying the effect of methylation in CACNA1C on substance abuse using 	iPSC models. </p>
+
+<p>I am very open to any opportunities to use my knowledge and learning enthusiasm to talk about science in psychiatry or neuroscience.  Throughout my academic career, I have participated in many different interdisciplinary studies which are not only within science (neuroscience and psychology) but humanities and science. </p>
+
+<p>My future goal is to make science, especially neuroscience and psychology easy to the public. I would like to connect the scientific research to the public real life.</p>
+</div>
+  </div>
+
+  <script>
+
+async function loadContent(id, file) {
+  const el = document.getElementById(id);
+  try {
+    const response = await fetch(file);
+    const text = await response.text();
+    el.innerHTML = text;
+  } catch (err) {
+    el.innerHTML = "<p>Error loading content.</p>";
+  }
+}
+
+function showSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  const wasHidden = section.classList.contains('hidden');
+
+  ['about', 'cv'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.classList.add('hidden');
+  });
+
+  if (wasHidden) {
+    section.classList.remove('hidden');
+  }
+}
+
+function openCV() {
+    window.open('cv.pdf', '_blank');
+}
+  </script>
+</body>
+</html>
