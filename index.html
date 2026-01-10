@@ -22,6 +22,7 @@
     <div class="tabs">
       <button onclick="showSection('about')">About Me</button>
       <button onclick="openCV()">My Career</button>
+	  <button onclick="showSection('public')">Public Engagement</button>
 
     </div>
       </div>
@@ -31,11 +32,28 @@
 
     <div class="content hidden" id="about">
 	<p>Currently, I am a postdoctoral researcher at the Center for Substance Abuse, Lewis 	Katz Medical Center. 
-	My project is studying the effect of methylation in CACNA1C on substance abuse using 	iPSC models. </p>
+	My project is studying the effect of methylation in CACNA1C on substance abuse using iPSC models. </p>
 
 <p>I am very open to any opportunities to use my knowledge and learning enthusiasm to talk about science in psychiatry or neuroscience.  Throughout my academic career, I have participated in many different interdisciplinary studies which are not only within science (neuroscience and psychology) but humanities and science. </p>
 
 <p>My future goal is to make science, especially neuroscience and psychology easy to the public. I would like to connect the scientific research to the public real life.</p>
+</div> 
+	<div class="content hidden" id="public">
+  	<p>Public Engagment </p>
+	
+	<p>Idea Festival (IF) Oxford 2020 
+		•Organized and led two public symposia on mental health 
+		• Mental Health in Oxford– What’s happening 
+		• Mental Health in Oxford– How Can You Help </p>
+	
+	<p>MindMap Oxford (Application) 
+		A digital storytelling project in which users share personal experiences linked to specific locations, describing how those places made them feel and how the environments affected their well-being. 
+		By reading others’ stories, users can recognize that they are not alone in experiencing such emotions </p>
+	
+	<p>Another Oxford (Application)
+		An immersive audio project that allows users to experience simulated auditory hallucinations, a common symptom in several psychiatric conditions. 
+		While not reproducing clinical hallucinations exactly, the project aims to approximate the experience to foster empathy and understanding </p>
+  	
 </div>
   </div>
 
@@ -56,7 +74,7 @@ function showSection(sectionId) {
   const section = document.getElementById(sectionId);
   const wasHidden = section.classList.contains('hidden');
 
-  ['about', 'cv'].forEach(id => {
+  ['about', 'cv', 'public'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.classList.add('hidden');
   });
